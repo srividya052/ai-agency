@@ -244,4 +244,121 @@ document.addEventListener('DOMContentLoaded', () => {
 	faqData.forEach(item => {
 		accordion.appendChild(createAccordionItem(item));
 	});
+
+	// Contact Form Validation
+	const contactForm = document.getElementById('contact-form');
+	if (contactForm) {
+		const successMessage = document.getElementById('contact-success');
+		const submitBtn = document.getElementById('submit-btn');
+		const nameInput = document.getElementById('contact-name');
+		const emailInput = document.getElementById('contact-email');
+		const messageInput = document.getElementById('contact-message');
+
+		// Enable submit button on load
+		submitBtn.disabled = false;
+
+		const validateEmail = (email) => {
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			return emailRegex.test(email);
+		};
+
+		const showError = (fieldId, message) => {
+			const errorSpan = document.getElementById(`error-${fieldId}`);
+			if (errorSpan) {
+				errorSpan.textContent = message;
+				errorSpan.classList.remove('hidden');
+				document.getElementById(`contact-${fieldId}`).classList.add('border-red-500');
+			}
+		};
+
+		const clearError = (fieldId) => {
+			const errorSpan = document.getElementById(`error-${fieldId}`);
+			if (errorSpan) {
+				errorSpan.classList.add('hidden');
+				document.getElementById(`contact-${fieldId}`).classList.remove('border-red-500');
+			}
+		};
+
+		// Real-time validation
+		[nameInput, emailInput, messageInput].forEach(input => {
+			input.addEventListener('blur', () => {
+				const fieldName = input.name;
+				const fieldId = input.id.replace('contact-', '');
+
+				if (!input.value.trim()) {
+					showError(fieldId, `${fieldName.charAt(0).toUpperCase() + fieldName.slice(1)} is required`);
+				} else if (fieldName === 'email' && !validateEmail(input.value)) {
+					showError(fieldId, 'Please enter a valid email address');
+				} else {
+					clearError(fieldId);
+				}
+			});
+		});
+
+		const setLoading = (isLoading) => {
+			submitBtn.disabled = isLoading;
+			if (isLoading) {
+				submitBtn.classList.add('opacity-75');
+			} else {
+				submitBtn.classList.remove('opacity-75');
+			}
+		};
+
+		contactForm.addEventListener('submit', (e) => {
+			e.preventDefault();
+
+			// Clear all previous errors
+			['name', 'email', 'message'].forEach(field => clearError(field));
+
+			let isValid = true;
+			const formData = {
+				name: nameInput.value.trim(),
+				email: emailInput.value.trim(),
+				company: document.getElementById('contact-company').value.trim(),
+				message: messageInput.value.trim()
+			};
+
+			// Validate name
+			if (!formData.name) {
+				showError('name', 'Name is required');
+				isValid = false;
+			}
+
+			// Validate email
+			if (!formData.email) {
+				showError('email', 'Email is required');
+				isValid = false;
+			} else if (!validateEmail(formData.email)) {
+				showError('email', 'Please enter a valid email address');
+				isValid = false;
+			}
+
+			// Validate message
+			if (!formData.message) {
+				showError('message', 'Message is required');
+				isValid = false;
+			}
+
+			if (isValid) {
+				// Set loading state
+				setLoading(true);
+
+				// Simulate form submission (replace with actual API call)
+				setTimeout(() => {
+					// Show success message
+					successMessage.classList.remove('hidden');
+					contactForm.reset();
+					setLoading(false);
+
+					// Hide success message after 5 seconds
+					setTimeout(() => {
+						successMessage.classList.add('hidden');
+					}, 5000);
+
+					// In a real application, you would send this data to a server
+					console.log('Form submitted:', formData);
+				}, 1500);
+			}
+		});
+	}
 });
