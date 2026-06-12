@@ -27,6 +27,25 @@
 .glow-pulse {
     animation: glow-pulse 2s ease-in-out infinite;
 }
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.testimonial-card-active {
+    animation: slide-in 0.5s ease-out forwards;
+}
+
+.testimonial-card-hidden {
+    display: none;
+}
     </style>
 </head>
 <body class="bg-slate-950 text-white">
@@ -430,6 +449,407 @@
             </div>
         </section>
 
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center mb-12">
+                <p class="text-sm uppercase tracking-[0.35em] text-cyan-300 mb-4">Client Stories</p>
+                <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+                    What Our Clients Say
+                </h2>
+                <p class="text-gray-300 max-w-3xl mx-auto leading-relaxed text-lg">
+                    Trusted by innovative companies worldwide.
+                </p>
+            </div>
+
+            <!-- Testimonial Slider -->
+            <div class="relative">
+                <div class="overflow-hidden">
+                    <div class="flex transition-transform duration-500" id="testimonialsContainer">
+                        <!-- Testimonial 1 -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="relative overflow-hidden group rounded-3xl border border-cyan-500/20 bg-white/5 p-8 shadow-2xl shadow-cyan-500/10 backdrop-blur-xl hover:border-cyan-300/40 hover:bg-white/15 transition duration-500">
+                                <div class="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-500/20 via-blue-500/10 to-teal-500/20 opacity-0 transition duration-500 group-hover:opacity-80"></div>
+                                <div class="relative z-10">
+                                    <div class="flex items-center gap-4 mb-6">
+                                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-2xl">
+                                            👨‍💼
+                                        </div>
+                                        <div>
+                                            <h3 class="text-lg font-semibold text-white">Alex Johnson</h3>
+                                            <p class="text-cyan-300 text-sm">CEO</p>
+                                            <p class="text-gray-400 text-sm">TechNova</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-300 leading-relaxed mb-4">
+                                        "AI Nexus transformed our operations completely. The AI automation solution reduced our manual workflows by 70% in just three months. Their team's expertise and support made the entire process seamless."
+                                    </p>
+                                    <div class="flex gap-1">
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="relative overflow-hidden group rounded-3xl border border-blue-500/20 bg-white/5 p-8 shadow-2xl shadow-blue-500/10 backdrop-blur-xl hover:border-blue-300/40 hover:bg-white/15 transition duration-500">
+                                <div class="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/20 via-cyan-500/10 to-teal-500/20 opacity-0 transition duration-500 group-hover:opacity-80"></div>
+                                <div class="relative z-10">
+                                    <div class="flex items-center gap-4 mb-6">
+                                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-2xl">
+                                            👩‍💼
+                                        </div>
+                                        <div>
+                                            <h3 class="text-lg font-semibold text-white">Sarah Chen</h3>
+                                            <p class="text-blue-300 text-sm">Operations Manager</p>
+                                            <p class="text-gray-400 text-sm">CloudSync</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-300 leading-relaxed mb-4">
+                                        "The chatbot development service has been a game-changer for our customer support. We've seen a 85% reduction in response time and significantly improved customer satisfaction scores."
+                                    </p>
+                                    <div class="flex gap-1">
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="relative overflow-hidden group rounded-3xl border border-teal-500/20 bg-white/5 p-8 shadow-2xl shadow-teal-500/10 backdrop-blur-xl hover:border-teal-300/40 hover:bg-white/15 transition duration-500">
+                                <div class="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-teal-500/20 via-cyan-500/10 to-blue-500/20 opacity-0 transition duration-500 group-hover:opacity-80"></div>
+                                <div class="relative z-10">
+                                    <div class="flex items-center gap-4 mb-6">
+                                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-teal-500 to-cyan-500 flex items-center justify-center text-2xl">
+                                            👨‍🔬
+                                        </div>
+                                        <div>
+                                            <h3 class="text-lg font-semibold text-white">David Kumar</h3>
+                                            <p class="text-teal-300 text-sm">Data Director</p>
+                                            <p class="text-gray-400 text-sm">DataFlow</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-300 leading-relaxed mb-4">
+                                        "Their machine learning models have unlocked insights we never knew existed in our data. The custom solutions are perfectly tailored to our industry's unique challenges."
+                                    </p>
+                                    <div class="flex gap-1">
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="relative overflow-hidden group rounded-3xl border border-cyan-500/20 bg-white/5 p-8 shadow-2xl shadow-cyan-500/10 backdrop-blur-xl hover:border-cyan-300/40 hover:bg-white/15 transition duration-500">
+                                <div class="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-500/20 via-blue-500/10 to-teal-500/20 opacity-0 transition duration-500 group-hover:opacity-80"></div>
+                                <div class="relative z-10">
+                                    <div class="flex items-center gap-4 mb-6">
+                                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500 to-teal-500 flex items-center justify-center text-2xl">
+                                            👩‍🚀
+                                        </div>
+                                        <div>
+                                            <h3 class="text-lg font-semibold text-white">Lisa Martinez</h3>
+                                            <p class="text-cyan-300 text-sm">CTO</p>
+                                            <p class="text-gray-400 text-sm">NextGen AI</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-300 leading-relaxed mb-4">
+                                        "The cloud AI solutions provided by AI Nexus scaled perfectly with our growth. Deployment was straightforward and their support team is always available when we need them."
+                                    </p>
+                                    <div class="flex gap-1">
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 5 -->
+                        <div class="w-full flex-shrink-0 px-4">
+                            <div class="relative overflow-hidden group rounded-3xl border border-blue-500/20 bg-white/5 p-8 shadow-2xl shadow-blue-500/10 backdrop-blur-xl hover:border-blue-300/40 hover:bg-white/15 transition duration-500">
+                                <div class="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/20 via-cyan-500/10 to-teal-500/20 opacity-0 transition duration-500 group-hover:opacity-80"></div>
+                                <div class="relative z-10">
+                                    <div class="flex items-center gap-4 mb-6">
+                                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center text-2xl">
+                                            👨‍💻
+                                        </div>
+                                        <div>
+                                            <h3 class="text-lg font-semibold text-white">Michael Rodriguez</h3>
+                                            <p class="text-blue-300 text-sm">VP Strategy</p>
+                                            <p class="text-gray-400 text-sm">Vision Labs</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-300 leading-relaxed mb-4">
+                                        "AI Nexus consulting guided us through our entire AI transformation journey. Their strategic insights helped us avoid costly mistakes and accelerated our time to value."
+                                    </p>
+                                    <div class="flex gap-1">
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                        <span class="text-yellow-400">⭐</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex gap-4 justify-center mt-8">
+                    <button id="prevBtn" class="group flex items-center justify-center w-12 h-12 rounded-full border border-cyan-500/30 bg-white/5 hover:bg-white/15 hover:border-cyan-300/60 transition duration-300 backdrop-blur-md" aria-label="Previous testimonial">
+                        <svg class="w-6 h-6 text-cyan-400 group-hover:text-cyan-300 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+
+                    <!-- Indicator Dots -->
+                    <div class="flex gap-2 items-center">
+                        <button class="indicator-dot w-2 h-2 rounded-full bg-cyan-500 transition duration-300" data-index="0" aria-label="Go to testimonial 1"></button>
+                        <button class="indicator-dot w-2 h-2 rounded-full bg-gray-600 hover:bg-gray-500 transition duration-300" data-index="1" aria-label="Go to testimonial 2"></button>
+                        <button class="indicator-dot w-2 h-2 rounded-full bg-gray-600 hover:bg-gray-500 transition duration-300" data-index="2" aria-label="Go to testimonial 3"></button>
+                        <button class="indicator-dot w-2 h-2 rounded-full bg-gray-600 hover:bg-gray-500 transition duration-300" data-index="3" aria-label="Go to testimonial 4"></button>
+                        <button class="indicator-dot w-2 h-2 rounded-full bg-gray-600 hover:bg-gray-500 transition duration-300" data-index="4" aria-label="Go to testimonial 5"></button>
+                    </div>
+
+                    <button id="nextBtn" class="group flex items-center justify-center w-12 h-12 rounded-full border border-cyan-500/30 bg-white/5 hover:bg-white/15 hover:border-cyan-300/60 transition duration-300 backdrop-blur-md" aria-label="Next testimonial">
+                        <svg class="w-6 h-6 text-cyan-400 group-hover:text-cyan-300 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose AI Nexus - Tabs Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center mb-12">
+                <p class="text-sm uppercase tracking-[0.35em] text-cyan-300 mb-4">Our Advantages</p>
+                <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight">
+                    Why Choose AI Nexus
+                </h2>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="flex flex-wrap gap-4 justify-center mb-12">
+                <button class="tab-button active px-6 py-3 rounded-lg font-semibold transition duration-300 border-2 bg-white/10 border-cyan-500/30 text-white hover:bg-white/15 hover:border-cyan-300/60 focus:outline-none focus:ring-2 focus:ring-cyan-400" data-tab="automation">
+                    ⚡ AI Automation
+                </button>
+                <button class="tab-button px-6 py-3 rounded-lg font-semibold transition duration-300 border-2 bg-white/5 border-gray-600/30 text-gray-300 hover:bg-white/10 hover:border-cyan-300/40 focus:outline-none focus:ring-2 focus:ring-cyan-400" data-tab="ml">
+                    🧠 Machine Learning
+                </button>
+                <button class="tab-button px-6 py-3 rounded-lg font-semibold transition duration-300 border-2 bg-white/5 border-gray-600/30 text-gray-300 hover:bg-white/10 hover:border-cyan-300/40 focus:outline-none focus:ring-2 focus:ring-cyan-400" data-tab="analytics">
+                    📊 Data Analytics
+                </button>
+                <button class="tab-button px-6 py-3 rounded-lg font-semibold transition duration-300 border-2 bg-white/5 border-gray-600/30 text-gray-300 hover:bg-white/10 hover:border-cyan-300/40 focus:outline-none focus:ring-2 focus:ring-cyan-400" data-tab="consulting">
+                    🚀 AI Consulting
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="relative">
+                <!-- AI Automation Tab -->
+                <div class="tab-content active" id="automation-content">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="relative overflow-hidden group rounded-3xl border border-cyan-500/20 bg-white/5 p-8 shadow-2xl shadow-cyan-500/10 backdrop-blur-xl hover:border-cyan-300/40 hover:bg-white/15 transition duration-500">
+                            <div class="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-cyan-500/20 via-blue-500/10 to-teal-500/20 opacity-0 transition duration-500 group-hover:opacity-80"></div>
+                            <div class="relative z-10">
+                                <div class="text-6xl mb-4">⚡</div>
+                                <h3 class="text-2xl font-semibold text-white mb-3">Streamline Your Operations</h3>
+                                <p class="text-gray-300 leading-relaxed mb-6">
+                                    Automate repetitive tasks and workflows to boost productivity by up to 70%. Our AI solutions seamlessly integrate with your existing systems.
+                                </p>
+                                <div class="space-y-3">
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-cyan-400 font-bold mt-1">✓</span>
+                                        <p class="text-gray-300">Reduce manual work and human errors</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-cyan-400 font-bold mt-1">✓</span>
+                                        <p class="text-gray-300">24/7 automated process execution</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-cyan-400 font-bold mt-1">✓</span>
+                                        <p class="text-gray-300">Easy integration with existing tools</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-cyan-400 font-bold mt-1">✓</span>
+                                        <p class="text-gray-300">Real-time monitoring and alerts</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative h-96 flex items-center justify-center">
+                            <div class="relative w-full h-full flex items-center justify-center">
+                                <div class="w-48 h-48 rounded-full bg-gradient-to-br from-cyan-600 to-blue-600 opacity-20 blur-3xl absolute"></div>
+                                <svg class="w-48 h-48 relative z-10 text-cyan-400" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="100" r="80" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="100" cy="100" r="60" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+                                    <path d="M100 30 L100 170 M30 100 L170 100" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="100" cy="100" r="8" fill="currentColor"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Machine Learning Tab -->
+                <div class="tab-content hidden" id="ml-content">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="relative overflow-hidden group rounded-3xl border border-blue-500/20 bg-white/5 p-8 shadow-2xl shadow-blue-500/10 backdrop-blur-xl hover:border-blue-300/40 hover:bg-white/15 transition duration-500">
+                            <div class="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-blue-500/20 via-cyan-500/10 to-teal-500/20 opacity-0 transition duration-500 group-hover:opacity-80"></div>
+                            <div class="relative z-10">
+                                <div class="text-6xl mb-4">🧠</div>
+                                <h3 class="text-2xl font-semibold text-white mb-3">Predictive Intelligence</h3>
+                                <p class="text-gray-300 leading-relaxed mb-6">
+                                    Custom ML models that learn from your data to predict trends and optimize decision-making. Built specifically for your industry.
+                                </p>
+                                <div class="space-y-3">
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-blue-400 font-bold mt-1">✓</span>
+                                        <p class="text-gray-300">Industry-specific model training</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-blue-400 font-bold mt-1">✓</span>
+                                        <p class="text-gray-300">Continuous learning and improvement</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-blue-400 font-bold mt-1">✓</span>
+                                        <p class="text-gray-300">Explainable AI for transparency</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-blue-400 font-bold mt-1">✓</span>
+                                        <p class="text-gray-300">Predictive accuracy up to 95%+</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative h-96 flex items-center justify-center">
+                            <div class="relative w-full h-full flex items-center justify-center">
+                                <div class="w-48 h-48 rounded-full bg-gradient-to-br from-blue-600 to-cyan-600 opacity-20 blur-3xl absolute"></div>
+                                <svg class="w-48 h-48 relative z-10 text-blue-400" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <polyline points="30,150 60,100 90,120 120,60 150,90 170,40" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    <circle cx="30" cy="150" r="4" fill="currentColor"/>
+                                    <circle cx="60" cy="100" r="4" fill="currentColor"/>
+                                    <circle cx="90" cy="120" r="4" fill="currentColor"/>
+                                    <circle cx="120" cy="60" r="4" fill="currentColor"/>
+                                    <circle cx="150" cy="90" r="4" fill="currentColor"/>
+                                    <circle cx="170" cy="40" r="4" fill="currentColor"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Analytics Tab -->
+                <div class="tab-content hidden" id="analytics-content">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="relative overflow-hidden group rounded-3xl border border-teal-500/20 bg-white/5 p-8 shadow-2xl shadow-teal-500/10 backdrop-blur-xl hover:border-teal-300/40 hover:bg-white/15 transition duration-500">
+                            <div class="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-teal-500/20 via-cyan-500/10 to-blue-500/20 opacity-0 transition duration-500 group-hover:opacity-80"></div>
+                            <div class="relative z-10">
+                                <div class="text-6xl mb-4">📊</div>
+                                <h3 class="text-2xl font-semibold text-white mb-3">Actionable Insights</h3>
+                                <p class="text-gray-300 leading-relaxed mb-6">
+                                    Transform raw data into compelling visualizations and insights. Make data-driven decisions with confidence and speed.
+                                </p>
+                                <div class="space-y-3">
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-teal-400 font-bold mt-1">✓</span>
+                                        <p class="text-gray-300">Real-time data dashboards</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-teal-400 font-bold mt-1">✓</span>
+                                        <p class="text-gray-300">Advanced data visualization</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-teal-400 font-bold mt-1">✓</span>
+                                        <p class="text-gray-300">Pattern recognition and anomaly detection</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-teal-400 font-bold mt-1">✓</span>
+                                        <p class="text-gray-300">Scalable data processing</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative h-96 flex items-center justify-center">
+                            <div class="relative w-full h-full flex items-center justify-center">
+                                <div class="w-48 h-48 rounded-full bg-gradient-to-br from-teal-600 to-cyan-600 opacity-20 blur-3xl absolute"></div>
+                                <svg class="w-48 h-48 relative z-10 text-teal-400" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="40" y="120" width="20" height="40" stroke="currentColor" stroke-width="2"/>
+                                    <rect x="70" y="90" width="20" height="70" stroke="currentColor" stroke-width="2"/>
+                                    <rect x="100" y="60" width="20" height="100" stroke="currentColor" stroke-width="2"/>
+                                    <rect x="130" y="80" width="20" height="80" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Consulting Tab -->
+                <div class="tab-content hidden" id="consulting-content">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="relative overflow-hidden group rounded-3xl border border-purple-500/20 bg-white/5 p-8 shadow-2xl shadow-purple-500/10 backdrop-blur-xl hover:border-purple-300/40 hover:bg-white/15 transition duration-500">
+                            <div class="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-500/20 via-pink-500/10 to-rose-500/20 opacity-0 transition duration-500 group-hover:opacity-80"></div>
+                            <div class="relative z-10">
+                                <div class="text-6xl mb-4">🚀</div>
+                                <h3 class="text-2xl font-semibold text-white mb-3">Strategic Partnership</h3>
+                                <p class="text-gray-300 leading-relaxed mb-6">
+                                    Expert guidance through every stage of your AI journey. From strategy to implementation, we're your trusted advisor.
+                                </p>
+                                <div class="space-y-3">
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-purple-400 font-bold mt-1">✓</span>
+                                        <p class="text-gray-300">Comprehensive AI roadmap development</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-purple-400 font-bold mt-1">✓</span>
+                                        <p class="text-gray-300">Executive training and workshops</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-purple-400 font-bold mt-1">✓</span>
+                                        <p class="text-gray-300">Risk assessment and mitigation</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-purple-400 font-bold mt-1">✓</span>
+                                        <p class="text-gray-300">Ongoing support and optimization</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="relative h-96 flex items-center justify-center">
+                            <div class="relative w-full h-full flex items-center justify-center">
+                                <div class="w-48 h-48 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 opacity-20 blur-3xl absolute"></div>
+                                <svg class="w-48 h-48 relative z-10 text-purple-400" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="100" cy="80" r="25" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M80 110 Q80 130 100 130 Q120 130 120 110" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="70" cy="100" r="8" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="130" cy="100" r="8" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="blog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <h2 class="text-3xl font-bold text-white mb-6">Blog</h2>
             <p class="text-gray-300 max-w-3xl leading-relaxed">
@@ -515,5 +935,8 @@
             }
         });
     </script>
+
+    <!-- Components Script -->
+    <script src="components.js"></script>
 </body>
 </html>
