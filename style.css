@@ -1,0 +1,34 @@
+
+/* Small helpers for blog cards */
+.blog-image {
+	width: 100%;
+	height: 176px;
+	object-fit: cover;
+	display: block;
+}
+
+.rounded-lg:focus-within {
+	outline: 2px solid rgba(6,182,212,0.12);
+	outline-offset: 2px;
+}
+
+@media (min-width: 1280px) {
+	.blog-image { height: 176px; }
+}
+/* FAQ Accordion smooth animations */
+.faq-answer {
+  will-change: max-height;
+}
+
+.faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-item[data-faq-id] .faq-button[aria-expanded="true"] .faq-icon {
+  transform: rotate(0deg);
+}
+
+/* Ensures smooth max-height transition */
+.faq-item .faq-answer {
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}

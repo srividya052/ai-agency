@@ -4,6 +4,7 @@ function initTestimonialsSlider() {
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const indicatorDots = document.querySelectorAll('.indicator-dot');
+    const testimonialsSection = document.getElementById('testimonials');
     
     if (!testimonialsContainer || !prevBtn || !nextBtn || indicatorDots.length === 0) {
         return;
@@ -11,6 +12,7 @@ function initTestimonialsSlider() {
     
     let currentIndex = 0;
     let autoSlideInterval;
+    let isHovering = false;
 
     function updateSlider() {
         const translateX = -currentIndex * 100;
@@ -47,7 +49,9 @@ function initTestimonialsSlider() {
     }
 
     function autoSlide() {
-        nextSlide();
+        if (!isHovering) {
+            nextSlide();
+        }
     }
 
     function resetAutoSlide() {
@@ -66,15 +70,25 @@ function initTestimonialsSlider() {
         });
     });
 
-    // Pause on hover
-    const testimonialsSection = document.getElementById('testimonials');
+    // Pause on hover - detect hover on testimonial cards
     if (testimonialsSection) {
         testimonialsSection.addEventListener('mouseenter', () => {
+            isHovering = true;
             clearInterval(autoSlideInterval);
         });
 
         testimonialsSection.addEventListener('mouseleave', () => {
-            autoSlideInterval = setInterval(autoSlide, 5000);
+            isHovering = false;
+            resetAutoSlide();
+        });
+
+        // Also add keyboard navigation support
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (event.key === 'ArrowRight') {
+                nextSlide();
+            }
         });
     }
 
