@@ -29,7 +29,7 @@ https://srividya052.github.io/ai-agency/
 
 ## Screenshots
 
-![alt text](screenshots/Desktop%20Screenshot%202026-06-14%20at%208.24.44%20PM.png)
+![hero-page](hero-1.png)
 
 ## Project Structure
 
